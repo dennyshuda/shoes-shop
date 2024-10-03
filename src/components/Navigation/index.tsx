@@ -18,7 +18,7 @@ const Navigation = () => {
 						<Link href="/" className="text-gray-700">
 							Home
 						</Link>
-						<Link href="/shop" className="text-gray-700">
+						<Link href="/product" className="text-gray-700">
 							Shop
 						</Link>
 						<Link href="/login" className="bg-black text-white px-3.5 py-2 rounded-md">
