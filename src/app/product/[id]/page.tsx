@@ -1,11 +1,12 @@
 import Container from "@/components/common/Container";
 import ProductDetail from "./modules";
+import { getSingleProduct } from "../action";
 
-const ProductDetailPage = ({ params }: { params: { id: string } }) => {
+const ProductDetailPage = async ({ params }: { params: { id: string } }) => {
+	const product = await getSingleProduct(Number(params.id));
+
 	return (
-		<Container>
-			<ProductDetail id={params.id} />
-		</Container>
+		<Container>{!product ? <div>loading</div> : <ProductDetail product={product} />}</Container>
 	);
 };
 
