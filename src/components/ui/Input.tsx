@@ -4,14 +4,30 @@ import { ComponentProps, forwardRef } from "react";
 interface InputProps extends ComponentProps<"input"> {
 	label?: string;
 	containerClassName?: string;
+	labelClassName?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-	({ label, className, containerClassName, ...props }, ref) => {
+	({ label, className, containerClassName, labelClassName, ...props }, ref) => {
 		return (
-			<div className={cn("flex flex-col gap-1 w-full", containerClassName)}>
+			<div
+				className={cn(
+					"flex flex-col gap-1 w-full",
+					{ "flex-row gap-2": props.type === "checkbox" || props.type === "radio" },
+					containerClassName
+				)}
+			>
 				{label && (
-					<label htmlFor={label} className="text-sm font-medium text-gray-700">
+					<label
+						htmlFor={label}
+						className={cn(
+							"text-sm font-medium text-gray-700",
+							{
+								"order-1 text-lg": props.type === "checkbox" || props.type === "radio",
+							},
+							labelClassName
+						)}
+					>
 						{label}
 					</label>
 				)}
