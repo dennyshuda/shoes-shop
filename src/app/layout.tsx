@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 
@@ -29,6 +30,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={` ${geistSans.className} antialiased`}>
 				<Navigation />
+				<Toaster />
 				{children}
 			</body>
 		</html>
