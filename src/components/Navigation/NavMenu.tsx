@@ -1,6 +1,6 @@
-import { getSession } from "@/app/(auth)/sign-up/action";
 import Link from "next/link";
 import ShoppingCart from "./ShoppingCart";
+import { getSession } from "@/lib/auth/action";
 
 const NavMenu = async () => {
 	const session = await getSession();

@@ -1,5 +1,5 @@
-import { destroySession } from "@/app/(auth)/sign-up/action";
 import Button from "@/components/ui/Button";
+import { destroySession } from "@/lib/auth/action";
 
 const Logout = () => {
 	return (

@@ -1,4 +1,4 @@
-import { getSession } from "@/app/(auth)/sign-up/action";
+import { getSession } from "@/lib/auth/action";
 
 const User = async () => {
 	const session = await getSession();
